@@ -105,10 +105,12 @@ The verification process relies on two public APIs. To ensure reliability and av
 
 1.  **Hiro API Proxy**: Fetches inscription ownership data.
 
+      - API Endpoint: https://docs.hiro.so/apis/ordinals-api/reference/inscriptions/get-inscription
       - The required worker code is in `cloudflare worker/Hiro api worker.js`.
 
-2.  **Magic Eden API Proxy**: Fetches a user's profile bio to verify wallet ownership.
+3.  **Magic Eden API Proxy**: Fetches a user's profile bio to verify wallet ownership.
 
+      - API Endpoint: https://docs.magiceden.io/reference/get_wallets-wallet-address-1
       - The required worker code is in `cloudflare worker/ME api worker.js`.
 
 **IMPORTANT:** After deploying these workers to your own Cloudflare account, you must **update the endpoint URLs** inside the `code snippet/bitmap update form.php` file to point to your new worker URLs.
